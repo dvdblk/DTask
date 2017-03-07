@@ -26,7 +26,6 @@ class ViewController: UIViewController {
     
     private func prepareTableView() {
         tableView.dataSource = self
-        tableView.delegate = self
         tableView.separatorStyle = .singleLine
         tableView.separatorInset = .zero
         let cellNib = UINib(nibName: TaskTableViewCell.nibName, bundle: nil)
@@ -40,6 +39,8 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource {
     private func configure(cell: TaskTableViewCell, withTask task: Task) {
         cell.taskLabel.text = task.text
+        cell.delegate = self
+        cell.task = task
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -61,11 +62,10 @@ extension ViewController: UITableViewDataSource {
     }
 }
 
-//
-// MARK: - UITableViewDelegate
-//
-extension ViewController: UITableViewDelegate {
-    
+extension ViewController: TaskTableViewCellDelegate {
+    func didRemoveCell(task: Task) {
+        taskManager?.remove(task: task)
+    }
 }
 
 //
@@ -81,6 +81,7 @@ extension ViewController: TaskManagerDelegate {
         tableView.beginUpdates()
         tableView.deleteRows(at: [indexPath], with: .fade)
         tableView.endUpdates()
+        saveToDefaults()
     }
 }
 

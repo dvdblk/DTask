@@ -8,10 +8,18 @@
 
 import UIKit
 
+protocol TaskTableViewCellDelegate {
+    func didRemoveCell(task: Task)
+}
+
+
 class TaskTableViewCell: UITableViewCell {
 
     public static let identifier = "taskTableViewCellIdentifier"
     public static let nibName = "TaskTableViewCell"
+    
+    public var task: Task?
+    public var delegate: TaskTableViewCellDelegate?
     
     private var initialCenter = CGPoint()
     private var generator = UIImpactFeedbackGenerator(style: .light)
@@ -59,7 +67,7 @@ class TaskTableViewCell: UITableViewCell {
                     self.center = self.initialCenter
                 })
             } else {
-                // TODO: delete
+                delegate?.didRemoveCell(task: task!)
             }
         default:
             break

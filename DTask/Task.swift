@@ -15,3 +15,7 @@ struct Task {
     static let finishedString = "finished"
     static let textString = "text"
 }
+
+extension Task: Equatable {
+    
+}
