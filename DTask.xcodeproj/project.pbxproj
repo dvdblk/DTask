@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0349FD2EC69C739D791ED28E /* Pods_DTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95535B0E040BA76AEAFF5B5D /* Pods_DTask.framework */; };
+		89442B581E6EEC7C00E79929 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89442B571E6EEC7C00E79929 /* Task.swift */; };
+		89442B5B1E6EF16800E79929 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89442B5A1E6EF16800E79929 /* Extensions.swift */; };
 		89C312A91E6C57A2009F0621 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C312A81E6C57A2009F0621 /* AppDelegate.swift */; };
 		89C312AB1E6C57A2009F0621 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C312AA1E6C57A2009F0621 /* ViewController.swift */; };
 		89C312AE1E6C57A2009F0621 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89C312AC1E6C57A2009F0621 /* Main.storyboard */; };
@@ -16,12 +18,14 @@
 		89C312BB1E6C857C009F0621 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89C312BA1E6C857C009F0621 /* GoogleService-Info.plist */; };
 		89C312C01E6C8DAA009F0621 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C312BE1E6C8DAA009F0621 /* TaskTableViewCell.swift */; };
 		89C312C11E6C8DAA009F0621 /* TaskTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C312BF1E6C8DAA009F0621 /* TaskTableViewCell.xib */; };
-		89C312C41E6C8EA9009F0621 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C312C31E6C8EA9009F0621 /* Task.swift */; };
+		89C312C41E6C8EA9009F0621 /* TaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C312C31E6C8EA9009F0621 /* TaskManager.swift */; };
 		89C312C91E6CB676009F0621 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C312C81E6CB676009F0621 /* AddTaskViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4AD0A74F3541BE02816C01C3 /* Pods-DTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DTask.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DTask/Pods-DTask.debug.xcconfig"; sourceTree = "<group>"; };
+		89442B571E6EEC7C00E79929 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		89442B5A1E6EF16800E79929 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		89C312A51E6C57A2009F0621 /* DTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89C312A81E6C57A2009F0621 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89C312AA1E6C57A2009F0621 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -32,7 +36,7 @@
 		89C312BA1E6C857C009F0621 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		89C312BE1E6C8DAA009F0621 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		89C312BF1E6C8DAA009F0621 /* TaskTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskTableViewCell.xib; sourceTree = "<group>"; };
-		89C312C31E6C8EA9009F0621 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		89C312C31E6C8EA9009F0621 /* TaskManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskManager.swift; sourceTree = "<group>"; };
 		89C312C81E6CB676009F0621 /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		95535B0E040BA76AEAFF5B5D /* Pods_DTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAC41A1DCDB8AF5966F5AE56 /* Pods-DTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DTask.release.xcconfig"; path = "Pods/Target Support Files/Pods-DTask/Pods-DTask.release.xcconfig"; sourceTree = "<group>"; };
@@ -50,6 +54,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		89442B591E6EEC8C00E79929 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				89C312C31E6C8EA9009F0621 /* TaskManager.swift */,
+				89442B571E6EEC7C00E79929 /* Task.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		89C3129C1E6C57A1009F0621 = {
 			isa = PBXGroup;
 			children = (
@@ -71,8 +84,9 @@
 		89C312A71E6C57A2009F0621 /* DTask */ = {
 			isa = PBXGroup;
 			children = (
-				89C312C31E6C8EA9009F0621 /* Task.swift */,
+				89442B5A1E6EF16800E79929 /* Extensions.swift */,
 				89C312AC1E6C57A2009F0621 /* Main.storyboard */,
+				89442B591E6EEC8C00E79929 /* Model */,
 				89C312BD1E6C8D72009F0621 /* VC */,
 				89C312C21E6C8DB9009F0621 /* View */,
 				89C312BC1E6C8D66009F0621 /* Supporting Files */,
@@ -253,11 +267,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89C312C41E6C8EA9009F0621 /* Task.swift in Sources */,
+				89C312C41E6C8EA9009F0621 /* TaskManager.swift in Sources */,
 				89C312AB1E6C57A2009F0621 /* ViewController.swift in Sources */,
 				89C312A91E6C57A2009F0621 /* AppDelegate.swift in Sources */,
 				89C312C01E6C8DAA009F0621 /* TaskTableViewCell.swift in Sources */,
+				89442B581E6EEC7C00E79929 /* Task.swift in Sources */,
 				89C312C91E6CB676009F0621 /* AddTaskViewController.swift in Sources */,
+				89442B5B1E6EF16800E79929 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,11 +23,11 @@ class AddTaskViewController: UIViewController {
             return
         }
         destVC.taskManager!.addTask(text: taskTextField.text!)
-        NSLog("correct dest vc")
     }
     
 
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
+        taskTextField.resignFirstResponder()
         dismiss(animated: true, completion: nil)
     }
     

@@ -28,6 +28,7 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = .singleLine
+        tableView.separatorInset = .zero
         let cellNib = UINib(nibName: TaskTableViewCell.nibName, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: TaskTableViewCell.identifier)
     }
@@ -74,6 +75,12 @@ extension ViewController: TaskManagerDelegate {
     func didAdd(task: Task) {
         tableView.reloadData()
         saveToDefaults()
+    }
+    
+    func didRemove(task: Task, atIndexPath indexPath: IndexPath) {
+        tableView.beginUpdates()
+        tableView.deleteRows(at: [indexPath], with: .fade)
+        tableView.endUpdates()
     }
 }
 
