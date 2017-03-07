@@ -42,14 +42,6 @@ class TaskManager {
             self.tasks.append(Task(finished: taskFinished, text: taskText))
         }
     }
-    
-    fileprivate func indexOf(task: Task) -> Int? {
-        let index = (tasks as NSArray).index(of: task)
-        if index == NSNotFound {
-            return nil
-        }
-        return index
-    }
 }
 
 //
@@ -63,7 +55,7 @@ extension TaskManager {
     }
     
     public func remove(task: Task) {
-        guard let index = indexOf(task: task) else {
+        guard let index = tasks.index(of: task) else {
             // nothing to remove
             return
         }

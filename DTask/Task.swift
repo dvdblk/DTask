@@ -17,5 +17,7 @@ struct Task {
 }
 
 extension Task: Equatable {
-    
+    public static func ==(lhs: Task, rhs: Task) -> Bool {
+        return lhs.text == rhs.text && lhs.finished == rhs.finished
+    }
 }
